@@ -1,16 +1,16 @@
 {
   "name": "pre-compiled",
-  "version": "1.0.0",
   "description": "Targeted precompile for ES6 bundles for Node environments: versions 0.10, 0.11, 0.12, 4, 5",
   "main": "index.js",
   "scripts": {
     "test": "npm run lint",
     "lint": "standard *.js",
-    "commit": "commit-wizard"
+    "commit": "commit-wizard",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bahmutov/pre-compiled.git"
+    "url": "https://github.com/bahmutov/pre-compiled.git"
   },
   "keywords": [
     "ES6",
@@ -57,7 +57,8 @@
   },
   "devDependencies": {
     "pre-git": "3.3.0",
-    "standard": "5.4.1"
+    "standard": "5.4.1",
+    "semantic-release": "^4.3.5"
   },
   "dependencies": {
     "check-more-types": "2.10.0",
