@@ -15,6 +15,9 @@ la(is.object(config),
 var nodeFeatures = require('./features/get-features')()
 la(is.object(nodeFeatures), 'could not load node features')
 
+// assuming pre-compiled module will do the bundle copy on the client side
+config.moduleWithBabelPolyfill = 'pick-precompiled'
+
 compiled.build(config)
   .then(function () {
     var versions = is.array(config.versions) && config.versions ||
