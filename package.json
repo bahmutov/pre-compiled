@@ -1,0 +1,44 @@
+{
+  "name": "pre-compiled",
+  "version": "1.0.0",
+  "description": "Targeted precompile for ES6 bundles for Node environments: versions 0.10, 0.11, 0.12, 4, 5",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "standard *.js",
+    "commit": "commit-wizard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/pre-compiled.git"
+  },
+  "keywords": [
+    "ES6",
+    "ES2015",
+    "pre",
+    "compile",
+    "precompile",
+    "pre-compile",
+    "bundle",
+    "rollup"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/pre-compiled/issues"
+  },
+  "homepage": "https://github.com/bahmutov/pre-compiled#readme",
+  "config": {
+    "pre-git": {
+      "commit-msg": ["simple"],
+      "pre-commit": ["npm run lint"],
+      "pre-push": [],
+      "post-commit": [],
+      "post-merge": []
+    }
+  },
+  "devDependencies": {
+    "pre-git": "3.3.0",
+    "standard": "5.4.1"
+  }
+}
