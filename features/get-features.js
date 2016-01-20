@@ -9,7 +9,7 @@ var join = require('path').join
 var inThisFolder = join.bind(null, __dirname, '/')
 var load = require('fs').readFileSync
 
-function getFeatures (version) {
+function getFeaturesFor (version) {
   var filename = filenames[version]
   if (!filename) {
     console.error('Cannot ES6 features for Node', version)
@@ -20,9 +20,23 @@ function getFeatures (version) {
   return JSON.parse(load(inThisFolder(filename)))
 }
 
+function getFeatures (version) {
+  if (!version) {
+    var all = {}
+    Object.keys(filenames).forEach(function (ver) {
+      all[ver] = getFeaturesFor(ver)
+    })
+    return all
+  }
+
+  return getFeaturesFor(version)
+}
+
 module.exports = getFeatures
 
 if (!module.parent) {
   console.log('features for Node 4')
   console.log(getFeatures('4'))
+  console.log('features for all known versions')
+  console.log(getFeatures())
 }
