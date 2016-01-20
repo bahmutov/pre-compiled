@@ -1,18 +1,22 @@
+#!/usr/bin/env node
+
+'use strict'
+
 var la = require('lazy-ass')
 var is = require('check-more-types')
 var path = require('path')
+var fs = require('fs')
 
 var compiled = require('compiled')
 la(is.fn(compiled.build), 'missing build', compiled)
 
-var packageFilename = './package.json'
-var fs = require('fs')
+var packageFilename = path.join(process.cwd(), './package.json')
 var pkg = JSON.parse(fs.readFileSync(packageFilename))
 var config = pkg.config && pkg.config['pre-compiled']
 la(is.object(config),
   'missing pre-compiled config in package file', packageFilename)
 
-var nodeFeatures = require('./features/get-features')()
+var nodeFeatures = require('../features/get-features')()
 la(is.object(nodeFeatures), 'could not load node features')
 
 // assuming pre-compiled module will do the bundle copy on the client side
