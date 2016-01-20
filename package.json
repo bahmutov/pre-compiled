@@ -43,6 +43,13 @@
         "4"
       ]
     },
+    "release": {
+      "verifyConditions": {
+        "path": "condition-node-version",
+        "node": "4.2.2",
+        "verbose": true
+      }
+    },
     "pre-git": {
       "commit-msg": [
         "simple"
@@ -57,9 +64,10 @@
     }
   },
   "devDependencies": {
+    "condition-node-version": "1.2.0",
     "pre-git": "3.3.0",
-    "standard": "5.4.1",
-    "semantic-release": "^4.3.5"
+    "semantic-release": "^4.3.5",
+    "standard": "5.4.1"
   },
   "dependencies": {
     "check-more-types": "2.10.0",
