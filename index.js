@@ -1,5 +1,7 @@
 var la = require('lazy-ass')
 var is = require('check-more-types')
+var path = require('path')
+
 var compiled = require('compiled')
 la(is.fn(compiled.build), 'missing build', compiled)
 
@@ -32,6 +34,18 @@ compiled.build(config)
 
       function compileForVersion () {
         console.log('compiling for version', version)
+
+        la(is.object(features), 'expected object with features, version', version)
+        config.esFeatures = features
+
+        config.formOutputFilename = function formOutputFilename (bundleName) {
+          la(is.unemptyString(bundleName), 'expected bundle name')
+          var dir = is.unemptyString(config.dir) ? config.dir : 'dist'
+          var filename = path.join(dir, bundleName + '.compiled.for.' + version + '.js')
+          return filename
+        }
+
+        la(is.fn(compiled.compile), 'not a function (compile)')
         return compiled.compile(config)
       }
 
@@ -41,5 +55,6 @@ compiled.build(config)
   })
   .catch(function (error) {
     console.error(error)
+    console.error(error.stack)
     process.exit(-1)
   })
