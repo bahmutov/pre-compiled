@@ -68,7 +68,9 @@
         "npm run lint",
         "npm test"
       ],
-      "pre-push": [],
+      "pre-push": [
+        "npm run size"
+      ],
       "post-commit": [],
       "post-merge": []
     }
