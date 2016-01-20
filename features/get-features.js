@@ -1,4 +1,5 @@
 var filenames = {
+  '0.10': 'es-features-node-0.10.json',
   '0.11': 'es-features-node-0.11.json',
   '0.12': 'es-features-node-0.12.json',
   '4': 'es-features-node-4.json',

@@ -6,6 +6,10 @@
 [![Build status][pre-compiled-ci-image] ][pre-compiled-ci-url]
 [![semantic-release][semantic-image] ][semantic-url]
 
+Supported features for each Node platform were computed using
+[find-es-support.js](https://github.com/bahmutov/compiled/blob/master/src/find-es-support.js)
+in [bahmutov/compiled](https://github.com/bahmutov/compiled).
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2016
