@@ -5,12 +5,17 @@
   "bin": {
     "precompile": "bin/precompile.js"
   },
+  "files": [
+    "bin",
+    "features"
+  ],
   "scripts": {
     "test": "DEBUG=compiled node bin/precompile.js",
     "lint": "standard bin/*.js features/*.js",
     "commit": "commit-wizard",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "issues": "git-issues"
+    "issues": "git-issues",
+    "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";"
   },
   "repository": {
     "type": "git",
