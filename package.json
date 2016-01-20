@@ -47,7 +47,7 @@
         "4"
       ]
     },
-    "release": {
+    "ex-release": {
       "verifyConditions": {
         "path": "condition-node-version",
         "node": "4.2.2",
