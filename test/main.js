@@ -10,6 +10,12 @@ Promise.resolve(add(a, b))
 const objectAdd = ({a, b}) => a + b
 console.log('Adding object properties', objectAdd({ a: 10, b: 2 }))
 
+console.log('function with default parameter')
+function addOne(x, one = 1) {
+  return x + one
+}
+console.log('2 + 1', addOne(2))
+
 console.log('binary literal', 0b101)
 
 // spread rest support

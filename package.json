@@ -10,7 +10,8 @@
     "features"
   ],
   "scripts": {
-    "test": "DEBUG=compiled node bin/precompile.js",
+    "test": "DEBUG=compiled node bin/precompile.js && npm run run-test-bundle",
+    "run-test-bundle": "node test-dist/main.compiled.for.0.10.js",
     "lint": "standard bin/*.js features/*.js",
     "commit": "commit-wizard",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
@@ -78,6 +79,7 @@
   "devDependencies": {
     "condition-node-version": "1.2.0",
     "git-issues": "1.2.0",
+    "pick-precompiled": "1.0.2",
     "pre-git": "3.3.0",
     "semantic-release": "^4.3.5",
     "standard": "5.4.1"
