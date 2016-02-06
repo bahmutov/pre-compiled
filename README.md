@@ -10,6 +10,8 @@ Supported features for each Node platform were computed using
 [find-es-support.js](https://github.com/bahmutov/compiled/blob/master/src/find-es-support.js)
 in [bahmutov/compiled](https://github.com/bahmutov/compiled).
 
+Read [Precompiled JavaScript](https://glebbahmutov.com/blog/precompiled-javascript/).
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2016
