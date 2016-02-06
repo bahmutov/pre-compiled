@@ -43,7 +43,8 @@
       "dir": "test-dist",
       "files": [
         "test/main.js",
-        "test/bin-main.js"
+        "test/bin-main.js",
+        "test/def-param.js"
       ],
       "features": [
         "StringMethods"
@@ -86,7 +87,7 @@
   },
   "dependencies": {
     "check-more-types": "2.10.0",
-    "compiled": "1.18.0",
+    "compiled": "1.19.1",
     "lazy-ass": "1.3.0"
   }
 }
