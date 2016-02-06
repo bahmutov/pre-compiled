@@ -12,6 +12,39 @@ in [bahmutov/compiled](https://github.com/bahmutov/compiled).
 
 Read [Precompiled JavaScript](https://glebbahmutov.com/blog/precompiled-javascript/).
 
+## Install and use
+
+    npm install --save-dev pre-compiled
+
+Add desired Node platforms and build command to the "config" property in the `package.json` file
+
+```json
+{
+  "scripts": {
+    "build": "precompile"
+  },
+  "config": {
+    "pre-compiled": {
+      "dir": "output-dir",
+      "files": [
+        "src/main.js",
+        "bin/cli.js"
+      ],
+      "node": [
+        "0.10",
+        "4"
+      ]
+    }
+  }
+}
+```
+
+Run the build step
+
+    npm run build
+
+It will create two bundles x 2 Node versions in the folder "output-dir".
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2016
