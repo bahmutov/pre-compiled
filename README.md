@@ -39,6 +39,9 @@ Add desired Node platforms and build command to the "config" property in the `pa
 }
 ```
 
+- You can also specify a single file as a string for the `files` property.
+- If omitted, the `dir` property (ouptut directory) will default to `dist/`.
+
 Run the build step
 
     npm run build

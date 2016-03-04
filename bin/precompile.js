@@ -16,6 +16,19 @@ var config = pkg.config && pkg.config['pre-compiled']
 la(is.object(config),
   'missing pre-compiled config in package file', packageFilename)
 
+// convert a string "files" value to an array
+if (is.string(config.files)) {
+  config.files = [config.files]
+}
+
+// choose "dist" as default output directory
+if (is.not.unemptyString(config.dir)) {
+  config.dir = 'dist'
+}
+
+la(is.all(config, {dir: is.unemptyString, files: is.array}),
+  'invalid compiled config', config)
+
 var nodeFeatures = require('../features/get-features')()
 la(is.object(nodeFeatures), 'could not load node features')
 
